@@ -25,7 +25,7 @@ jobs:
       - name: Build small APK (shrunk)
         id: small
         continue-on-error: true
-        run: gradle assembleRelease --no-daemon -PminifyEnabled=true
+        run: gradle assembleRelease --no-daemon -PminifyEnabled=false
 
       - name: Fallback build (bigger APK, no shrinking)
         if: steps.small.outcome == 'failure'
